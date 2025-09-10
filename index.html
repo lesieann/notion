@@ -106,21 +106,31 @@
             margin: 20px 0;
         }
 
-        .image-placeholder {
-            background: linear-gradient(135deg, #fd79a8, #e84393);
-            height: 200px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(253, 121, 168, 0.3);
-            transition: transform 0.3s ease;
+        .wardrobe-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            overflow: hidden;
         }
 
-        .image-placeholder:hover {
-            transform: scale(1.05);
+        .wardrobe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .wardrobe-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .wardrobe-card:hover img {
+            transform: scale(1.02);
         }
 
         .character-info {
@@ -259,17 +269,58 @@
                 <small data-zh="（從新到舊）" data-en="(New to Old)">(從新到舊)</small>
             </h2>
             <div class="gallery">
-                <div class="image-placeholder">Image 1</div>
-                <div class="image-placeholder">Image 2</div>
-                <div class="image-placeholder">Image 3</div>
-                <div class="image-placeholder">Image 4</div>
-                <div class="image-placeholder">Image 5</div>
-                <div class="image-placeholder">Image 6</div>
+                <div class="wardrobe-card">
+                    <img src="https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E8%A1%A3%E6%AB%A51.png" alt="衣櫥1">
+                </div>
+                <div class="wardrobe-card">
+                    <img src="https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E8%A1%A3%E6%AB%A52.png" alt="衣櫥2">
+                </div>
+                <div class="wardrobe-card">
+                    <img src="https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E8%A1%A3%E6%AB%A53.png" alt="衣櫥3">
+                </div>
+                <div class="wardrobe-card">
+                    <img src="https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E8%A1%A3%E6%AB%A54.png" alt="衣櫥4">
+                </div>
+                <div class="wardrobe-card">
+                    <img src="https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E8%A1%A3%E6%AB%A55.png" alt="衣櫥5">
+                </div>
+                <div class="wardrobe-card">
+                    <img src="https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E8%A1%A3%E6%AB%A56.png" alt="衣櫥6">
+                </div>
+                <div class="wardrobe-card">
+                    <img src="https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E8%A1%A3%E6%AB%A57.png" alt="衣櫥7">
+                </div>
+                <div class="wardrobe-card">
+                    <img src="https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E8%A1%A3%E6%AB%A58.jpg" alt="衣櫥8">
+                </div>
+                <div class="wardrobe-card">
+                    <img src="https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E8%A1%A3%E6%AB%A59.jpg" alt="衣櫥9">
+                </div>
+                <div class="wardrobe-card">
+                    <img src="https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E8%A1%A3%E6%AB%A510.jpeg" alt="衣櫥10">
+                </div>
+                <div class="wardrobe-card">
+                    <img src="https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E8%A1%A3%E6%AB%A511.png" alt="衣櫥11">
+                </div>
+                <div class="wardrobe-card">
+                    <img src="https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E8%A1%A3%E6%AB%A513.png" alt="衣櫥13">
+                </div>
+                <div class="wardrobe-card">
+                    <img src="https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E8%A1%A3%E6%AB%A514.jpg" alt="衣櫥14">
+                </div>
+                <div class="wardrobe-card">
+                    <img src="https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E8%A1%A3%E6%AB%A515.png" alt="衣櫥15">
+                </div>
+                <div class="wardrobe-card">
+                    <img src="https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E8%A1%A3%E6%AB%A516.png" alt="衣櫥16">
+                </div>
+                <div class="wardrobe-card">
+                    <img src="https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E8%A1%A3%E6%AB%A518.png" alt="衣櫥18">
+                </div>
+                <div class="wardrobe-card">
+                    <img src="https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E8%A1%A3%E6%AB%A517.png" alt="衣櫥17">
+                </div>
             </div>
-            <p data-zh="注：圖片會在實際使用時替換為真實圖片" 
-               data-en="Note: Images will be replaced with actual images when implemented">
-               注：圖片會在實際使用時替換為真實圖片
-            </p>
         </div>
 
         <div class="section">
@@ -455,71 +506,6 @@
                            比起其他天鵝絨助手戰鬥經驗明顯不足，戰鬥時熱愛偷懶放秒殺技能米吉多拉翁然後被明智吾郎用手提箱追著打，才會一邊哭一邊乖乖用其他人格面具戰鬥。偏好使用又強又好看（通常是女性）的人格面具，很笨所以沒有戰鬥策略，一開始靠等級壓制明智吾郎，後來才被逐漸變強的明智打敗。
                         </p>
                     </div>
-                    
-                    <div style="margin-bottom: 15px;">
-                        <strong data-zh="真實身分：" data-en="True Identity: ">真實身分：</strong>
-                        <p data-zh="並非天鵝絨房間的原生住客（伊格爾的造物），真實身分是另一條世界線的安在通關P5R後因產生對遊戲角色的執著而跟偽神簽署了契約，成為了某條明智吾郎進入天鵝絨房間世界線的天鵝絨助手（但失去記憶）。故事結束後因偽神的消失契約失效，回歸了原來的世界線，電腦莫名出現了一個以明智吾郎為主角的mp4檔案。" 
-                           data-en="Not a native resident of the Velvet Room (Igor's creation). True identity is Lesie from another timeline who, after clearing P5R, developed an obsession with the game character and signed a contract with the false god, becoming a Velvet Room assistant for a timeline where Akechi enters the Velvet Room (but lost her memories). After the story ends, the false god disappears and the contract becomes invalid, returning her to the original timeline where a mysterious mp4 file featuring Akechi as protagonist appears on her computer.">
-                           並非天鵝絨房間的原生住客（伊格爾的造物），真實身分是另一條世界線的安在通關P5R後因產生對遊戲角色的執著而跟偽神簽署了契約，成為了某條明智吾郎進入天鵝絨房間世界線的天鵝絨助手（但失去記憶）。故事結束後因偽神的消失契約失效，回歸了原來的世界線，電腦莫名出現了一個以明智吾郎為主角的mp4檔案。
-                        </p>
-                    </div>
-                    
-                    <div style="margin-bottom: 15px;">
-                        <strong data-zh="世界線設定：" data-en="Timeline Settings: ">世界線設定：</strong>
-                        <p data-zh="跟明智吾郎簽訂契約的是偽神（假伊格爾），稱呼明智吾郎為棋子，通常明智進入棋盤（天鵝絨房間）時都不在。這條世界線是偽神為了見證不同可能性而產生的獨立世界線。" 
-                           data-en="The one who made the contract with Akechi is the false god (fake Igor), who calls Akechi a chess piece and is usually absent when Akechi enters the chessboard (Velvet Room). This timeline is an independent world line created by the false god to witness different possibilities.">
-                           跟明智吾郎簽訂契約的是偽神（假伊格爾），稱呼明智吾郎為棋子，通常明智進入棋盤（天鵝絨房間）時都不在。這條世界線是偽神為了見證不同可能性而產生的獨立世界線。
-                        </p>
-                        <p style="font-style: italic; color: #FFE4B5;">
-                            <span data-zh="「您是最棒的執棋手。」" data-en="'You are the finest chess player.'">「您是最棒的執棋手。」</span>
-                        </p>
-                    </div>
-                    
-                    <div style="margin-bottom: 15px;">
-                        <strong data-zh="天鵝絨房間設定：" data-en="Velvet Room Settings: ">天鵝絨房間設定：</strong>
-                        <p data-zh="安：我要幫別人做戰鬥訓練？真的假的？關於人格面具的資訊在死背起來之後才敢把明智拉進天鵝絨房間，從一開始的場景在明智尚未進入前是關押犯人的牢籠，直到明智的進入才逐漸扭曲成型，變成棋盤的樣貌，而明智的頭上也出現了代表國王的皇冠，本人並不知情。" 
-                           data-en="Lesie: I have to help others with combat training? For real? Only dared to bring Akechi into the Velvet Room after memorizing all Persona information by rote. The initial scene before Akechi's entry was a prison cell, which gradually distorted into a chessboard appearance upon his arrival, with a crown representing the King appearing above Akechi's head, though he himself is unaware.">
-                           安：我要幫別人做戰鬥訓練？真的假的？關於人格面具的資訊在死背起來之後才敢把明智拉進天鵝絨房間，從一開始的場景在明智尚未進入前是關押犯人的牢籠，直到明智的進入才逐漸扭曲成型，變成棋盤的樣貌，而明智的頭上也出現了代表國王的皇冠，本人並不知情。
-                        </p>
-                    </div>
-                    
-                    <div style="margin-bottom: 15px;">
-                        <strong data-zh="對上司的看法：" data-en="Views on Boss: ">對上司的看法：</strong>
-                        <p data-zh="對此安問過上司長鼻子（偽神），但長鼻子只是發出了奇怪的笑聲嘰哩咕嚕說了很奇怪的話諸如「命運的齒輪終於開始轉動了……」，導致安以為長鼻子腦子有點什麼大病，私底下會跟明智吐槽長鼻子。" 
-                           data-en="Lesie asked her boss Long-nose (false god) about this, but Long-nose just made strange laughing sounds and mumbled weird things like 'The gears of fate have finally begun to turn...' This made Lesie think Long-nose has some mental issues and she privately complains about Long-nose to Akechi.">
-                           對此安問過上司長鼻子（偽神），但長鼻子只是發出了奇怪的笑聲嘰哩咕嚕說了很奇怪的話諸如「命運的齒輪終於開始轉動了……」，導致安以為長鼻子腦子有點什麼大病，私底下會跟明智吐槽長鼻子。
-                        </p>
-                    </div>
-                    
-                    <div style="margin-bottom: 15px;">
-                        <strong data-zh="稱呼變化：" data-en="Title Changes: ">稱呼變化：</strong>
-                        <p data-zh="對明智吾郎的稱呼：國王→明智同學→明智" data-en="Lesie's names for Akechi: King→Akechi-kun→Akechi">對明智吾郎的稱呼：國王→明智同學→明智</p>
-                        <p data-zh="明智對安的稱呼：教皇小姐→小生" data-en="Akechi's names for Lesie: Bishop-san→Ko-sei">明智對安的稱呼：教皇小姐→小生</p>
-                    </div>
-                    
-                    <div style="margin-bottom: 15px;">
-                        <strong data-zh="工作設備：" data-en="Work Equipment: ">工作設備：</strong>
-                        <p data-zh="初始武器是超大鐵鎚但本人很不擅長使用，所以改造了一間處刑室。人格面具的合成秘儀是把兩個面具放在卒的棋子下敲扁，會生成出新的棋子，棋子的位階越高代表面具越強。當合成發生意外，會把面具推入處刑室繼續完成處刑。遇到明智拿杰克霜精來合成會濫用特權拒絕，導致其全部都變成了卡片。" 
-                           data-en="Initial weapon was a giant hammer but she's terrible at using it, so she remodeled an execution room. The secret ritual for Persona fusion involves flattening two Personas under a pawn chess piece, generating new chess pieces where higher ranks represent stronger Personas. When fusion accidents occur, she pushes the Personas into the execution room to complete the execution. When Akechi brings Jack Frost for fusion, she abuses her privileges to refuse, causing them all to become cards.">
-                           初始武器是超大鐵鎚但本人很不擅長使用，所以改造了一間處刑室。人格面具的合成秘儀是把兩個面具放在卒的棋子下敲扁，會生成出新的棋子，棋子的位階越高代表面具越強。當合成發生意外，會把面具推入處刑室繼續完成處刑。遇到明智拿杰克霜精來合成會濫用特權拒絕，導致其全部都變成了卡片。
-                        </p>
-                    </div>
-                    
-                    <div style="margin-bottom: 15px;">
-                        <strong data-zh="個人空間：" data-en="Personal Space: ">個人空間：</strong>
-                        <p data-zh="會委託明智從現實帶回自己喜歡的東西或是請求帶自己外出，意外地有錢。天鵝絨房間內有一間安私自佔用的收藏室，裡面堆滿了各種周邊收藏，從沒讓明智進去過。" 
-                           data-en="Will request Akechi to bring back things she likes from reality or ask him to take her out, surprisingly wealthy. There's a collection room in the Velvet Room that Lesie has appropriated for herself, filled with various merchandise collections, never letting Akechi enter.">
-                           會委託明智從現實帶回自己喜歡的東西或是請求帶自己外出，意外地有錢。天鵝絨房間內有一間安私自佔用的收藏室，裡面堆滿了各種周邊收藏，從沒讓明智進去過。
-                        </p>
-                    </div>
-                    
-                    <div style="margin-bottom: 15px;">
-                        <strong data-zh="最終委託：" data-en="Final Request: ">最終委託：</strong>
-                        <p data-zh="在跟明智的相處中逐漸變得可靠，最後一次的委託是請求明智找回自己的記憶，沒有時限，完成委託需要同時看到雨宮蓮跟明智吾郎。當委託完成會解鎖人格面具「巴比倫大銀婦」，並獲得家具擺件「國際象棋・卒」，其是安曾經在這個故事留下的痕跡。" 
-                           data-en="Gradually becomes reliable through interactions with Akechi. The final request is asking Akechi to help recover her memories, with no time limit. Completing the request requires seeing both Ren Amamiya and Goro Akechi simultaneously. Upon completion, unlocks Persona 'The Great Whore of Babylon' and receives furniture item 'Chess Piece・Pawn', which is a trace of Lesie's presence in this story.">
-                           在跟明智的相處中逐漸變得可靠，最後一次的委託是請求明智找回自己的記憶，沒有時限，完成委託需要同時看到雨宮蓮跟明智吾郎。當委託完成會解鎖人格面具「巴比倫大銀婦」，並獲得家具擺件「國際象棋・卒」，其是安曾經在這個故事留下的痕跡。
-                        </p>
-                    </div>
                 </div>
             </div>
             
@@ -543,30 +529,6 @@
                         <p data-zh="安懶得戰鬥也討厭戰鬥，比起去挑戰道館，安更喜歡把時間花在跟可愛的寶可夢建立友誼。" 
                            data-en="Lesie is too lazy to battle and dislikes fighting. Rather than challenging gyms, she prefers to spend time building friendships with cute Pokémon.">
                            安懶得戰鬥也討厭戰鬥，比起去挑戰道館，安更喜歡把時間花在跟可愛的寶可夢建立友誼。
-                        </p>
-                    </div>
-                    
-                    <div style="margin-bottom: 15px;">
-                        <strong data-zh="喜好標準：" data-en="Preference Standards: ">喜好標準：</strong>
-                        <p data-zh="只喜歡毛茸茸又可愛的寶可夢不喜歡不好看的寶可夢，夢想是把傳說級的好看寶可夢也收入囊中（？）" 
-                           data-en="Only likes fluffy and cute Pokémon, dislikes unattractive ones. Dreams of capturing legendary beautiful Pokémon as well (?)">
-                           只喜歡毛茸茸又可愛的寶可夢不喜歡不好看的寶可夢，夢想是把傳說級的好看寶可夢也收入囊中（？）
-                        </p>
-                    </div>
-                    
-                    <div style="margin-bottom: 15px;">
-                        <strong data-zh="戰鬥能力：" data-en="Battle Capability: ">戰鬥能力：</strong>
-                        <p data-zh="不會戰鬥也沒有戰鬥隊伍，常駐成員是謝米，除非懶得走路不然謝米會在安的要求下保持陸地型態，因為他覺得更可愛。" 
-                           data-en="Doesn't know how to battle and has no battle team. Regular companion is Shaymin, who maintains land forme at Lesie's request unless she's too lazy to walk, because she thinks it's cuter.">
-                           不會戰鬥也沒有戰鬥隊伍，常駐成員是謝米，除非懶得走路不然謝米會在安的要求下保持陸地型態，因為他覺得更可愛。
-                        </p>
-                    </div>
-                    
-                    <div style="margin-bottom: 15px;">
-                        <strong data-zh="收服態度：" data-en="Capturing Philosophy: ">收服態度：</strong>
-                        <p data-zh="對寶可夢保持著「帶他回家就要對他負責」的態度，所以不會隨便收服寶可夢，收服的寶可夢也很少，但無一不是可愛型。" 
-                           data-en="Maintains the attitude of 'if you bring them home, you must take responsibility for them' towards Pokémon, so won't casually capture Pokémon. Has very few captured Pokémon, but all are cute types.">
-                           對寶可夢保持著「帶他回家就要對他負責」的態度，所以不會隨便收服寶可夢，收服的寶可夢也很少，但無一不是可愛型。
                         </p>
                     </div>
                 </div>
