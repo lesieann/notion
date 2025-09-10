@@ -134,6 +134,18 @@
             transform: scale(1.02);
         }
 
+        .click-hint {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            color: #636e72;
+            font-style: italic;
+            font-size: 0.9em;
+            background: rgba(108, 92, 231, 0.1);
+            border-radius: 10px;
+            border: 1px dashed #6c5ce7;
+        }
+
         .character-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -410,6 +422,10 @@
                     <img src="https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E8%A1%A3%E6%AB%A517.png" alt="衣櫥17">
                 </div>
             </div>
+            
+            <div class="click-hint">
+                <span data-zh="💡 點擊圖片以放大檢視" data-en="💡 Click images to enlarge">💡 點擊圖片以放大檢視</span>
+            </div>
         </div>
 
         <div class="section">
@@ -582,42 +598,70 @@
                 
                 <p data-zh="代表的國際象棋：教皇" data-en="Representative Chess Piece: Bishop">代表的國際象棋：教皇</p>
                 
-                <div style="text-align: center; margin: 15px 0;">
+                <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 15px 0; flex-wrap: wrap;">
                     <img src="https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E4%BA%9E%E7%A8%AE_P5_if_%E5%A4%A9%E9%B5%9D%E7%B5%A8%E6%9C%8D%E8%A8%AD.jpg" 
                          alt="亞種_P5_if_天鵝絨服設" 
                          class="clickable-image"
                          onclick="openLightbox('https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E4%BA%9E%E7%A8%AE_P5_if_%E5%A4%A9%E9%B5%9D%E7%B5%A8%E6%9C%8D%E8%A8%AD.jpg')"
-                         style="max-width: 300px; max-height: 250px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); object-fit: contain; margin: 10px;">
-                    <br>
+                         style="max-width: 280px; max-height: 250px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); object-fit: contain;">
                     <img src="https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E4%BA%9E%E7%A8%AE_P5_if_%E5%A4%A9%E9%B5%9D%E7%B5%A8.gif" 
                          alt="亞種_P5_if_天鵝絨" 
                          class="clickable-image"
                          onclick="openLightbox('https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E4%BA%9E%E7%A8%AE_P5_if_%E5%A4%A9%E9%B5%9D%E7%B5%A8.gif')"
-                         style="max-width: 300px; max-height: 250px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); object-fit: contain; margin: 10px;">
+                         style="max-width: 280px; max-height: 250px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); object-fit: contain;">
                 </div>
                 
                 <div id="velvet-details" style="display: none; margin-top: 20px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; line-height: 1.8;">
-                    <p style="font-style: italic; margin-bottom: 20px; font-size: 1.1em;">
-                        <span data-zh="「歡迎來到天鵝絨房間，國王，這裡是位於夢與現實，精神與物質的狹縫之處。」" 
-                              data-en="'Welcome to the Velvet Room, King. This place exists between dream and reality, mind and matter.'">
-                              「歡迎來到天鵝絨房間，國王，這裡是位於夢與現實，精神與物質的狹縫之處。」
-                        </span>
+                    <p style="font-style: italic; margin-bottom: 20px; font-size: 1.1em; text-align: center; color: #fff; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">
+                        「歡迎來到天鵝絨房間，國王，這裡是位於夢與現實，精神與物質的狹縫之處。」
                     </p>
                     
-                    <div style="margin-bottom: 15px;">
-                        <strong data-zh="基本設定：" data-en="Basic Settings: ">基本設定：</strong>
-                        <p data-zh="最喜歡的P是杰克霜精（因為很可愛），生氣的時候會拿人格面具全書K人，跟明智吾郎建立的社群為女皇。名字叫做萊斯莉，但一開始對明智的自稱是教皇，對應國際象棋。很喜歡明智吾郎的臉，會上網買偵探王子的訪談雜誌。" 
-                           data-en="Favorite Persona is Jack Frost (because it's cute). When angry, will hit people with the Persona compendium. Established Empress confidant with Goro Akechi. Name is Leslie, but initially introduced herself as Bishop to Akechi, corresponding to chess pieces. Really likes Akechi's face and buys Detective Prince interview magazines online.">
-                           最喜歡的P是杰克霜精（因為很可愛），生氣的時候會拿人格面具全書K人，跟明智吾郎建立的社群為女皇。名字叫做萊斯莉，但一開始對明智的自稱是教皇，對應國際象棋。很喜歡明智吾郎的臉，會上網買偵探王子的訪談雜誌。
-                        </p>
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: #fff; font-size: 1.1em;">基本設定：</strong>
+                        <p style="margin-top: 8px;">最喜歡的P是杰克霜精（因為很可愛），生氣的時候會拿人格面具全書K人，跟明智吾郎建立的社群為女皇。名字叫做萊斯莉，但一開始對明智的自稱是教皇，對應國際象棋。很喜歡明智吾郎的臉，會上網買偵探王子的訪談雜誌。</p>
                     </div>
                     
-                    <div style="margin-bottom: 15px;">
-                        <strong data-zh="戰鬥特色：" data-en="Combat Characteristics: ">戰鬥特色：</strong>
-                        <p data-zh="比起其他天鵝絨助手戰鬥經驗明顯不足，戰鬥時熱愛偷懶放秒殺技能米吉多拉翁然後被明智吾郎用手提箱追著打，才會一邊哭一邊乖乖用其他人格面具戰鬥。偏好使用又強又好看（通常是女性）的人格面具，很笨所以沒有戰鬥策略，一開始靠等級壓制明智吾郎，後來才被逐漸變強的明智打敗。" 
-                           data-en="Obviously lacks combat experience compared to other Velvet Room assistants. Loves to slack off in battle by using instant-kill skill Megidolaon, then gets chased around by Akechi with a briefcase, and only then will cry while obediently using other Personas to fight. Prefers using strong and beautiful (usually female) Personas. Too stupid to have battle strategies, initially relied on level advantage against Akechi, but was eventually defeated by the increasingly stronger Akechi.">
-                           比起其他天鵝絨助手戰鬥經驗明顯不足，戰鬥時熱愛偷懶放秒殺技能米吉多拉翁然後被明智吾郎用手提箱追著打，才會一邊哭一邊乖乖用其他人格面具戰鬥。偏好使用又強又好看（通常是女性）的人格面具，很笨所以沒有戰鬥策略，一開始靠等級壓制明智吾郎，後來才被逐漸變強的明智打敗。
-                        </p>
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: #fff; font-size: 1.1em;">戰鬥特色：</strong>
+                        <p style="margin-top: 8px;">比起其他天鵝絨助手戰鬥經驗明顯不足，戰鬥時熱愛偷懶放秒殺技能米吉多拉翁然後被明智吾郎用手提箱追著打，才會一邊哭一邊乖乖用其他人格面具戰鬥。偏好使用又強又好看（通常是女性）的人格面具，很笨所以沒有戰鬥策略，一開始靠等級壓制明智吾郎，後來才被逐漸變強的明智打敗。</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: #fff; font-size: 1.1em;">真實身份：</strong>
+                        <p style="margin-top: 8px;">並非天鵝絨房間的原生住客（伊格爾的造物），真實身分是另一條世界線的安在通關P5R後因產生對遊戲角色的執著而跟偽神簽署了契約，成為了某條明智吾郎進入天鵝絨房間世界線的天鵝絨助手（但失去記憶）。故事結束後因偽神的消失契約失效，回歸了原來的世界線，電腦莫名出現了一個以明智吾郎為主角的mp4檔案。</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: #fff; font-size: 1.1em;">世界線背景：</strong>
+                        <p style="margin-top: 8px;">跟明智吾郎簽訂契約的是偽神（假伊格爾），稱呼明智吾郎為棋子，通常明智進入棋盤（天鵝絨房間）時都不在。這條世界線是偽神為了見證不同可能性而產生的獨立世界線。</p>
+                        <p style="font-style: italic; color: #ffeaa7; margin-top: 10px;">「您是最棒的執棋手。」</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: #fff; font-size: 1.1em;">天鵝絨房間設定：</strong>
+                        <p style="margin-top: 8px;">安：我要幫別人做戰鬥訓練？真的假的？</p>
+                        <p style="margin-top: 8px;">關於人格面具的資訊在死背起來之後才敢把明智拉進天鵝絨房間。從一開始的場景在明智尚未進入前是關押犯人的牢籠，直到明智的進入才逐漸扭曲成型，變成棋盤的樣貌，而明智的頭上也出現了代表國王的皇冠，本人並不知情。對此安問過上司長鼻子（偽神），但長鼻子只是發出了奇怪的笑聲嘰哩咕嚕說了很奇怪的話諸如「命運的齒輪終於開始轉動了……」，導致安以為長鼻子腦子有點什麼大病，私底下會跟明智吐槽長鼻子。</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: #fff; font-size: 1.1em;">稱呼變化：</strong>
+                        <p style="margin-top: 8px;">對明智吾郎的稱呼：國王→明智同學→明智</p>
+                        <p style="margin-top: 5px;">明智對安的稱呼：教皇小姐→小生</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: #fff; font-size: 1.1em;">戰鬥與合成系統：</strong>
+                        <p style="margin-top: 8px;">初始武器是超大鐵鎚但本人很不擅長使用，所以改造了一間處刑室。人格面具的合成秘儀是把兩個面具放在卒的棋子下敲扁，會生成出新的棋子，棋子的位階越高代表面具越強。當合成發生意外，會把面具推入處刑室繼續完成處刑。遇到明智拿杰克霜精來合成會濫用特權拒絕，導致其全部都變成了卡片。</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: #fff; font-size: 1.1em;">日常生活：</strong>
+                        <p style="margin-top: 8px;">會委託明智從現實帶回自己喜歡的東西或是請求帶自己外出，意外地有錢。天鵝絨房間內有一間安私自佔用的收藏室，裡面堆滿了各種周邊收藏，從沒讓明智進去過。</p>
+                    </div>
+
+                    <div style="margin-bottom: 0;">
+                        <strong style="color: #fff; font-size: 1.1em;">故事發展：</strong>
+                        <p style="margin-top: 8px;">在跟明智的相處中逐漸變得可靠，最後一次的委託是請求明智找回自己的記憶，沒有時限，完成委託需要同時看到雨宮蓮跟明智吾郎。當委託完成會解鎖人格面具「巴比倫大銀婦」，並獲得家具擺件「國際象棋・卒」，其是安曾經在這個故事留下的痕跡。</p>
                     </div>
                 </div>
             </div>
@@ -639,12 +683,24 @@
                 </div>
                 
                 <div id="pokemon-details" style="display: none; margin-top: 20px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; line-height: 1.8;">
-                    <div style="margin-bottom: 15px;">
-                        <strong data-zh="對戰鬥的態度：" data-en="Attitude Towards Battles: ">對戰鬥的態度：</strong>
-                        <p data-zh="安懶得戰鬥也討厭戰鬥，比起去挑戰道館，安更喜歡把時間花在跟可愛的寶可夢建立友誼。" 
-                           data-en="Lesie is too lazy to battle and dislikes fighting. Rather than challenging gyms, she prefers to spend time building friendships with cute Pokémon.">
-                           安懶得戰鬥也討厭戰鬥，比起去挑戰道館，安更喜歡把時間花在跟可愛的寶可夢建立友誼。
-                        </p>
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: #fff; font-size: 1.1em;">對戰鬥的態度：</strong>
+                        <p style="margin-top: 8px;">安懶得戰鬥也討厭戰鬥，比起去挑戰道館，安更喜歡把時間花在跟可愛的寶可夢建立友誼。</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: #fff; font-size: 1.1em;">寶可夢喜好：</strong>
+                        <p style="margin-top: 8px;">只喜歡毛茸茸又可愛的寶可夢不喜歡不好看的寶可夢，夢想是把傳說級的好看寶可夢也收入囊中（？）</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: #fff; font-size: 1.1em;">隊伍配置：</strong>
+                        <p style="margin-top: 8px;">不會戰鬥也沒有戰鬥隊伍，常駐成員是謝米，除非懶得走路不然謝米會在安的要求下保持陸地型態，因為他覺得更可愛。</p>
+                    </div>
+
+                    <div style="margin-bottom: 0;">
+                        <strong style="color: #fff; font-size: 1.1em;">收服理念：</strong>
+                        <p style="margin-top: 8px;">對寶可夢保持著「帶他回家就要對他負責」的態度，所以不會隨便收服寶可夢，收服的寶可夢也很少，但無一不是可愛型。</p>
                     </div>
                 </div>
             </div>
