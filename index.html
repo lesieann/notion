@@ -256,17 +256,43 @@
             max-width: 90%;
             max-height: 90%;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             gap: 20px;
         }
 
+        .lightbox-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
         .lightbox-content img {
             max-width: 100%;
-            max-height: 90vh;
+            max-height: 70vh;
             object-fit: contain;
             border-radius: 10px;
             box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .lightbox-description {
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+
+        .lightbox-description.empty {
+            display: none;
         }
 
         .lightbox-close {
@@ -326,9 +352,18 @@
                 gap: 10px;
             }
 
+            .lightbox-images {
+                flex-direction: column;
+                gap: 10px;
+            }
+
             .lightbox-close {
                 top: 10px;
                 right: 10px;
+            }
+
+            .lightbox-content img {
+                max-height: 50vh;
             }
         }
     </style>
@@ -338,7 +373,8 @@
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
         <div class="lightbox-content" onclick="event.stopPropagation()">
             <button class="lightbox-close" onclick="closeLightbox()">×</button>
-            <div id="lightbox-images"></div>
+            <div id="lightbox-images" class="lightbox-images"></div>
+            <div id="lightbox-description" class="lightbox-description"></div>
         </div>
     </div>
 
@@ -367,6 +403,9 @@
                 <small data-zh="（從新到舊）" data-en="(New to Old)">(從新到舊)</small>
             </h2>
             <div class="gallery">
+                <div class="wardrobe-card" onclick="openLightboxDouble(['https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E7%A3%81%E5%90%B8%E7%9C%BC%E5%BD%B1%E7%9B%A4_%E8%B2%93_2.PNG', 'https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E7%A3%81%E5%90%B8%E7%9C%BC%E5%BD%B1%E7%9B%A4_%E8%B2%93_1.PNG'])">
+                    <img src="https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/%E7%A3%81%E5%90%B8%E7%9C%BC%E5%BD%B1%E7%9B%A4_%E8%B2%93_2.PNG" alt="衣櫥22">
+                </div>
                 <div class="wardrobe-card" onclick="openLightbox('https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/plurk_img_1757600732511.png')">
                     <img src="https://raw.githubusercontent.com/lesieann/notion/refs/heads/main/plurk_img_1757600732511.png" alt="衣櫥21">
                 </div>
@@ -433,7 +472,7 @@
             </div>
             
             <div class="click-hint">
-                <span data-zh="💡 點擊圖片以放大檢視" data-en="💡 Click images to enlarge">💡 點擊圖片以放大檢視</span>
+                <span data-zh="💡 點擊圖片以放大檢視及查看說明" data-en="💡 Click images to enlarge and view descriptions">💡 點擊圖片以放大檢視及查看說明</span>
             </div>
         </div>
 
@@ -727,6 +766,20 @@
     <script>
         let currentLanguage = 'zh';
         
+        // 圖片描述資料庫
+        const imageDescriptions = {
+            'plurk_img_1757600732511.png': '繪師：plurk@puni000620\n服裝設計TAG：水母般的透明感（類海浪？）、sweet dream、kpop打歌服、金屬配件、星空',
+            '磁吸眼影盤_貓_2.PNG': '繪師：宅星',
+            // 您可以在這裡添加更多圖片的描述
+            // 例如：'衣櫥1.png': '這是衣櫥1的描述...',
+        };
+        
+        function getImageDescription(imageSrc) {
+            // 從圖片URL中提取檔案名稱並解碼
+            const filename = decodeURIComponent(imageSrc.split('/').pop());
+            return imageDescriptions[filename] || '';
+        }
+        
         function toggleLanguage() {
             currentLanguage = currentLanguage === 'zh' ? 'en' : 'zh';
             updateContent();
@@ -779,19 +832,33 @@
             }
         }
 
-        // 燈箱功能
+        // 燈箱功能 - 單張圖片
         function openLightbox(imageSrc) {
             const lightbox = document.getElementById('lightbox');
             const lightboxImages = document.getElementById('lightbox-images');
+            const lightboxDescription = document.getElementById('lightbox-description');
             
             lightboxImages.innerHTML = `<img src="${imageSrc}" alt="放大圖片">`;
+            
+            // 獲取並顯示圖片描述
+            const description = getImageDescription(imageSrc);
+            if (description) {
+                lightboxDescription.innerHTML = description.replace(/\n/g, '<br>');
+                lightboxDescription.classList.remove('empty');
+            } else {
+                lightboxDescription.innerHTML = '';
+                lightboxDescription.classList.add('empty');
+            }
+            
             lightbox.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
 
+        // 燈箱功能 - 雙張圖片
         function openLightboxDouble(imageSrcs) {
             const lightbox = document.getElementById('lightbox');
             const lightboxImages = document.getElementById('lightbox-images');
+            const lightboxDescription = document.getElementById('lightbox-description');
             
             let imagesHTML = '';
             imageSrcs.forEach(src => {
@@ -799,6 +866,17 @@
             });
             
             lightboxImages.innerHTML = imagesHTML;
+            
+            // 對於雙張圖片，使用第一張圖片的描述
+            const description = getImageDescription(imageSrcs[0]);
+            if (description) {
+                lightboxDescription.innerHTML = description.replace(/\n/g, '<br>');
+                lightboxDescription.classList.remove('empty');
+            } else {
+                lightboxDescription.innerHTML = '';
+                lightboxDescription.classList.add('empty');
+            }
+            
             lightbox.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
